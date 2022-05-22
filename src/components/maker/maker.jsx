@@ -24,18 +24,17 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       setCards(cards);
     });
     return () => stopSync(); //컴포넌트가 unmount시 호출됨.
-  }, [userId]);
+  }, [userId, cardRepository]);
 
   useEffect(() => {
     authService.onAuthChange((user) => {
       if (user) {
         setUserId(user.uid);
-        console.log(userId);
       } else {
         navigate('/');
       }
     });
-  });
+  }, [userId, navigate, authService]);
 
   const createOrUpdateCard = (card) => {
     setCards((cards) => {
