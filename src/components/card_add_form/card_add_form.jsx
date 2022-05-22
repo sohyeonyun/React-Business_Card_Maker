@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useState, useRef } from 'react';
 import Button from '../button/button';
 import styles from './card_add_form.module.css';
 
